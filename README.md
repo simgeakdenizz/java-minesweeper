@@ -1,34 +1,24 @@
 # java-minesweeper
-A terminal-based Minesweeper game in Java featuring ANSI color styling and dynamic difficulty levels.
-# java-minesweeper
 
-A terminal-based Minesweeper game in Java featuring ANSI color styling and dynamic difficulty levels. This project focuses on 2D array manipulation, coordinate-based logic, and terminal UI formatting.
+A robust, terminal-based Minesweeper game implemented in Java. This project demonstrates advanced concepts like recursive flood-fill algorithms, defensive programming, and ANSI-styled terminal UI.
 
-## Features
-- Dynamic Difficulty Levels:
-    - Easy: 8x10 grid with 10 mines.
-    - Medium: 14x18 grid with 40 mines.
-    - Hard: 20x24 grid with 99 mines.
-- ANSI Color UI: Implementation of terminal escape codes for mines (Red), hidden cells (Cyan), and neighbor counts (Yellow).
-- 8-Neighbor Detection: Algorithmic logic to calculate adjacent mines for specific coordinates.
-- Symmetrical Grid Rendering: Mathematical formatting to ensure consistent cell width across different grid sizes.
-
-## Technologies
-- Language: Java
-- Libraries: Scanner API, Random API
-- Formatting: ANSI Escape Sequences
-
-## Roadmap and Current Status
-The project is currently in the initial development phase. The core game loop and visualization are functional.
-
-Planned Enhancements:
-- Implementation of the Flood-Fill algorithm for recursive clearing of empty cells.
-- Input validation to handle out-of-bounds coordinate exceptions.
-- Refinement of win/loss state transitions and game-over logic.
+## Features 
+- **Recursive Clearing:** Automated flood-fill logic that opens all adjacent empty cells instantly.
+- **Robust Input Validation:** Custom `getSafeInt` logic to prevent crashes from non-numeric or negative inputs.
+- **Flagging System:** Toggleable markers (◙) to track suspected mine locations.
+- **Dynamic Difficulty:** Choose from Easy, Medium, Hard, or fully Customizable grid dimensions.
+- **ANSI Terminal UI:** Symmetrical grid rendering with color-coded mines, flags, and coordinates.
 
 ## Execution
-To run the game locally, follow these steps:
+To compile and run the game, use these commands:
 
-1. Compile the source file:
-   ```bash
-   javac MineSweeper.java
+javac MineSweeper.java
+java MineSweeper
+
+
+
+## Controls
+- **A:** Reveal cell (Safe places)
+- **B:** Toggle mine flag (Mark/Unmark)
+- **C:** Restart game (Return to main menu)
+- **D:** Close application
