@@ -1,24 +1,22 @@
 # java-minesweeper
 
-A robust, terminal-based Minesweeper game implemented in Java. This project demonstrates advanced concepts like recursive flood-fill algorithms, defensive programming, and ANSI-styled terminal UI.
+A terminal-based Minesweeper game in Java. This project focuses on recursive algorithms, robust input validation, and tracking player statistics.
 
-## Features 
-- **Recursive Clearing:** Automated flood-fill logic that opens all adjacent empty cells instantly.
-- **Robust Input Validation:** Custom `getSafeInt` logic to prevent crashes from non-numeric or negative inputs.
-- **Flagging System:** Toggleable markers (◙) to track suspected mine locations.
-- **Dynamic Difficulty:** Choose from Easy, Medium, Hard, or fully Customizable grid dimensions.
-- **ANSI Terminal UI:** Symmetrical grid rendering with color-coded mines, flags, and coordinates.
+## Technical Features
+- Recursive Area Clearing: Opens adjacent safe cells using a flood-fill algorithm.
+- Robust Input Validation: Custom integer validator prevents crashes from non-numeric or invalid inputs.
+- Move Tracking: Tracks and displays the total number of moves made during a session.
+- Flagging System: Toggleable markers (▲) to track suspected mine locations.
+- ANSI Color UI: Color-coded display with row and column indices for precise navigation.
 
 ## Execution
-To compile and run the game, use these commands:
+To compile and run the game, use these commands in your terminal:
 
 javac MineSweeper.java
 java MineSweeper
 
-
-
 ## Controls
-- **A:** Reveal cell (Safe places)
-- **B:** Toggle mine flag (Mark/Unmark)
-- **C:** Restart game (Return to main menu)
-- **D:** Close application
+- A: Reveal cell (Safe places)
+- B: Toggle mine flag (Mark/Unmark)
+- C: Restart game (Return to main menu)
+- D: Close application

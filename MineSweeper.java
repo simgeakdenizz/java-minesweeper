@@ -62,6 +62,7 @@ public class MineSweeper {
     }
 
     public static void runGameLoop (int [][] n){
+        int moveCount = 0;
         Scanner sc = new Scanner(System.in);
         int [][] private_n = new int[n.length][n[0].length];
         for(int i = 0 ; i<private_n.length ; i++){
@@ -76,13 +77,17 @@ public class MineSweeper {
                 int x = getSafeInt(sc, "Enter column: ") - 1;
                 int y = getSafeInt(sc, "Enter row: ") - 1;
                 sc.nextLine();
+                moveCount++;
                 if(x < 0 || x >= n[0].length || y < 0 || y >= n.length) {
                     System.out.println(ANSI_RED + "Invalid coordinates! Please stay within the grid boundaries." + ANSI_RESET);
+                    moveCount--;
                     continue;
                 }
                 if(n[y][x]== -1) {
                     System.out.println("BOOM!");
                     renderBoard(n);
+                    System.out.println("Move count: " + moveCount);
+                    System.out.println("\n\n\n\n");
                     break;
                 }
                 openCell(x,y,n,private_n);
@@ -91,6 +96,7 @@ public class MineSweeper {
                 int x = getSafeInt(sc, "Enter column: ") - 1;
                 int y = getSafeInt(sc, "Enter row: ") - 1;
                 sc.nextLine();
+                moveCount++;
                 toggleFlag(x,y,n,private_n);
                 renderBoard(private_n);
             } else if (choice.equalsIgnoreCase("C")) {
@@ -105,6 +111,8 @@ public class MineSweeper {
         }
         if(checkWinCondition(n,private_n)){
             System.out.println("Supercalifragilisticexpialidocious!");
+            System.out.println("Move count: " + moveCount);
+            System.out.println("\n\n\n\n");
         }
     }
 
@@ -179,7 +187,7 @@ public class MineSweeper {
                 }else if(n[i][k] == -1){
                     System.out.print(ANSI_RED + "*  " + ANSI_RESET);
                 } else if (n[i][k] == -2) {
-                    System.out.print(ANSI_PURPLE + "◙  " + ANSI_RESET);
+                    System.out.print(ANSI_PURPLE + "▲  " + ANSI_RESET);
                 } else {
                     System.out.printf(ANSI_YELLOW + "%-3d" + ANSI_RESET, n[i][k]);
                 }
